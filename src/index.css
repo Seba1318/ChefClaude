@@ -27,3 +27,60 @@ header > h1 {
   font-size: 2.5rem;
   font-weight: 500;
 }
+
+main {
+  padding: 50px 30px 10px;
+}
+
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.add-ingredient-form > input {
+  font-size: 1rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.25rem;
+  padding: 9px 13px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+  min-width: 2rem;
+  max-width: 30rem;
+}
+
+.add-ingredient-form > input:focus {
+  outline: none;
+  border: 1px solid rgba(5, 94, 64, 0.5);
+  box-shadow: 0px 1px 2px 0px rgba(16, 185, 129, 0.5);
+}
+
+.add-ingredient-form > button {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #10B981;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 9px 25px;
+  /* box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05); */
+
+  transition: background-color 0.15s ease-in-out;
+}
+
+.add-ingredient-form > button::before {
+  content: "+";
+  margin-right: 0.7rem;
+}
+
+.add-ingredient-form > button:hover {
+  background-color: #1ED497;
+  cursor: pointer;
+}
+
+.add-ingredient-form > button:active {
+  background-color: #0E815B;
+  cursor: pointer;
+}
