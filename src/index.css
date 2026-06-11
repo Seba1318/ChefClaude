@@ -3,7 +3,7 @@ body {
 
   margin: 0;
   font-family: Inter, sans-serif;
-  background-color: #163300;
+  background-color: #FAFAF8;
 }
 
 header {
@@ -14,12 +14,16 @@ header {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  background-color: #9FE870;
+  background-color: white;
   padding: 0.5rem;
-  color: #163300;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
 header > img {
   width: 4.5rem;
+}
+
+header > h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
 }
