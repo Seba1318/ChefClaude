@@ -1,16 +1,47 @@
-# React + Vite
+# ChefClaude
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ChefClaude is a React + Vite app that helps you turn whatever ingredients you already have into a delicious recipe. The idea is simple: enter the ingredients you have on hand, send them to an AI-powered recipe API, and get back a meal idea you can actually make.
 
-Currently, two official plugins are available:
+## What this project does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ChefClaude will let users:
 
-## React Compiler
+- list the ingredients they currently have at home
+- submit those ingredients to an AI recipe generator
+- receive a recipe suggestion with steps and ingredient usage
+- explore creative meal ideas based on limited pantry items
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How it works
 
-## Expanding the ESLint configuration
+1. The user enters a set of ingredients.
+2. The app sends those ingredients to an AI API.
+3. The AI returns a recipe suggestion tailored to what is available.
+4. The recipe is displayed in the app for the user to follow.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech stack
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+## Getting started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Future goals
+
+- add ingredient input validation
+- improve recipe formatting and presentation
+- support dietary preferences such as vegetarian or gluten-free
+- connect the app to a real AI recipe API
