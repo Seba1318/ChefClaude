@@ -2,18 +2,17 @@ import React from "react";
 
 import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
+import {getRecipeFromAgent} from "../ai.js";
 
 export default function Main() {
-  const [ingredients, setIngredients] = React.useState(
-    ["all the main spices", "pasta", "ground beef", "onion", "garlic", "tomato paste", "crushed tomatoes", "beef broth"]);
+  const [ingredients, setIngredients] = React.useState([]);
   
-  const [isRecipeShown, setIsRecipeShown] = React.useState(false);
+  const [recipe, setRecipe] = React.useState("");
 
+  async function getRecipe() {
+    const recipeMarkdown = await getRecipeFromAgent(ingredients);
 
-  function toggleIsRecipeShown() {
-    setIsRecipeShown((prevShown) => {
-      return !prevShown;
-    });
+    setRecipe(recipeMarkdown);
   }
 
   function addIngredient(formData) {
@@ -26,21 +25,25 @@ export default function Main() {
 
   return (
     <main>
-      <form className="add-ingredient-form" action = {addIngredient}>
+      <form className="add-ingredient-form" action={addIngredient}>
         <input type="text" placeholder="e.g. oregano" name="ingredient" required/>
 
         <button>Add Ingredient</button>
       </form>
 
       {ingredients.length > 0 ? 
-      <IngredientsList
-        key={ingredients.length}
-        ingredients={ingredients}
-        toggleIsRecipeShown={toggleIsRecipeShown}
-      /> : null}
+        <IngredientsList
+          key={ingredients.length}
+          ingredients={ingredients}
+          getRecipe={getRecipe}
+        /> 
+      : null}
 
-      {isRecipeShown === true ? 
-      <ClaudeRecipe /> : null}
+      {recipe != "" ? 
+        <ClaudeRecipe
+          recipe={recipe}
+        /> 
+      : null}
     </main>
   );
 }
