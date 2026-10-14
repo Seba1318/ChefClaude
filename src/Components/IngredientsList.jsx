@@ -11,7 +11,7 @@ export default function IngredientsList(props) {
 
       {props.ingredients.length > 3 ? 
       <div className="get-recipe-container">
-        <div className="get-recipe-text-container">
+        <div className="get-recipe-text-container" ref={props.ref}>
           <h3>Ready for a recipe?</h3>
           <p>Get a recipe based on your list of ingredients.</p>
         </div>

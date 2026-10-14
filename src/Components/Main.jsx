@@ -8,12 +8,19 @@ export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   
   const [recipe, setRecipe] = React.useState("");
+  const recipeSection = React.useRef(null);
 
   async function getRecipe() {
     const recipeMarkdown = await getRecipeFromAgent(ingredients);
 
     setRecipe(recipeMarkdown);
   }
+
+  React.useEffect(() => {
+    if (recipe !== "" && recipeSection.current) {
+      recipeSection.current.scrollIntoView({behavior: "smooth"});
+    }
+  }, [recipe]);
 
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
@@ -33,9 +40,9 @@ export default function Main() {
 
       {ingredients.length > 0 ? 
         <IngredientsList
-          key={ingredients.length}
           ingredients={ingredients}
           getRecipe={getRecipe}
+          ref={recipeSection}
         /> 
       : null}
 
